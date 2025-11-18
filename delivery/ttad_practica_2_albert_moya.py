@@ -13,4 +13,8 @@ def calculaRatio(df, col1, col2):
         print("Error!") # col2 pot tenir alguna observació que sigui 0!
     
 
+def rango_ventas(group):
+    df = group.aggregate({'ventas':'sum'})
+    return df['ventas'].max() - df['ventas'].min()
+    
 
